@@ -1,12 +1,13 @@
 import { SPORTS, type SportKey } from '../types/sport'
 import './SportTabs.css'
+import React, { useState } from 'react'
 
 interface SportTabsProps {
   activeSport: SportKey
   onSportChange: (sport: SportKey) => void
 }
 
-export default function SportTabs({ activeSport, onSportChange }: SportTabsProps): JSX.Element {
+export default function SportTabs({ activeSport, onSportChange }: SportTabsProps): React.ReactElement {
   return (
     <div className="sport-tabs">
       {SPORTS.map(sport => (

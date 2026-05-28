@@ -1,10 +1,10 @@
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import MiniPlayer from './components/MiniPlayer'
 import type { SportKey } from './types/sport'
 import type { NormalizedGame } from './types/game'
 import './App.css'
 
-function App(): JSX.Element {
+function App(): React.ReactElement {
   const [activeSport, setActiveSport]     = useState<SportKey>('NBA')
   const [games, setGames]                 = useState<NormalizedGame[]>([])
   const [loading, setLoading]             = useState(false)

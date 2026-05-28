@@ -1,6 +1,12 @@
-node_modules
-dist
-out
+node_modules/
+dist/
+out/
+dist-electron/
+
+## Local environment files no commits
+.env
+.env.local
+
 .DS_Store
-.eslintcache
-*.log*
+Thumbs.db
+*.log
