@@ -1,0 +1,49 @@
+.sport-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tab {
+  flex: 1;
+  padding: 6px 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #7777aa;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.tab:hover:not(.disabled) {
+  background: rgba(255,255,255, 0.07);
+  color: #ccccee;
+}
+
+.tab.active {
+  background: rgba(108, 142, 255, 0.15);
+  border-color: rgba(108, 142, 255, 0.35);
+  color: #7b9fff;
+  font-weight: 600;
+}
+
+.tab.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tba {
+  font-size: 9px;
+  padding: 1px 3px;
+  background: rgba(255, 165, 0, 0.2);
+  color: #ffaa44;
+  border-radius: 3px;
+}
