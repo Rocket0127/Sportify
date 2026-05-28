@@ -14,7 +14,8 @@ function createWindow(): void {
     minHeight: 400,
 
     frame: false,
-    transparent: true,
+    transparent: false,
+    backgroundColor: '#0b0b12',
     alwaysOnTop: true,
     resizable: true,         // ← TEMP: lets you resize to debug
     skipTaskbar: false,
@@ -32,6 +33,13 @@ function createWindow(): void {
   ipcMain.on('set-always-on-top', (_event, flag: boolean) => {
     win.setAlwaysOnTop(flag, 'floating')
   })
+
+  // Resize the window when toggling between list and detail views
+ipcMain.on('resize-window', (_event, { width, height }: { width: number; height: number }) => {
+  const [x, y] = win.getPosition()
+  // animate=true gives a smooth resize on macOS; harmless on Windows
+  win.setBounds({ x, y, width, height }, true)
+})
 
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     win.loadURL(process.env['ELECTRON_RENDERER_URL'])

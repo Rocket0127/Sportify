@@ -9,7 +9,8 @@ contextBridge.exposeInMainWorld('electron', electronAPI)
  * contextIsolation means React has no direct Node.js access, which is correct.
  */
 contextBridge.exposeInMainWorld('windowAPI', {
-  close:          ()             => ipcRenderer.send('close-window'),
-  minimize:       ()             => ipcRenderer.send('minimize-window'),
-  setAlwaysOnTop: (flag: boolean) => ipcRenderer.send('set-always-on-top', flag),
+  close:          ()                                 => ipcRenderer.send('close-window'),
+  minimize:       ()                                 => ipcRenderer.send('minimize-window'),
+  setAlwaysOnTop: (flag: boolean)                    => ipcRenderer.send('set-always-on-top', flag),
+  resize:         (width: number, height: number)    => ipcRenderer.send('resize-window', { width, height }),
 })

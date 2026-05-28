@@ -1,0 +1,169 @@
+.game-detail {
+  padding: 14px 20px 18px;
+  color: #ddddf0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ── Header strip ─────────────────────────────────────── */
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.back-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #ccccee;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+.back-btn:hover { background: rgba(255,255,255,0.14); }
+
+.live-clock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #7b9fff;
+  font-weight: 600;
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #22dd88;
+  border-radius: 50%;
+  animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+.series-tag {
+  font-size: 11px;
+  color: #ffaa55;
+  background: rgba(255,170,85,0.1);
+  border: 1px solid rgba(255,170,85,0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ── Versus block ─────────────────────────────────────── */
+.versus {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+.team-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+/* CRITICAL: !important + max-width prevents logos from blowing up */
+.game-detail .team-logo-large {
+  width: 72px !important;
+  height: 72px !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
+  object-fit: contain;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  padding: 4px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.team-abbr {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 4px;
+}
+.team-fullname {
+  font-size: 10px;
+  color: #888;
+  text-align: center;
+}
+
+.bonus-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffaa55;
+  background: rgba(255,170,85,0.15);
+  border: 1px solid rgba(255,170,85,0.3);
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 2px;
+}
+
+.team-score-big {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 6px;
+  color: #888;
+  transition: color 0.3s;
+}
+.team-score-big.winning {
+  color: #7b9fff;
+}
+
+.vs-divider {
+  font-size: 13px;
+  font-weight: 700;
+  color: #44445a;
+  letter-spacing: 2px;
+  padding: 0 8px;
+}
+
+/* ── Top scorers ──────────────────────────────────────── */
+.top-scorers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 12px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.scorer-block.right { text-align: right; }
+
+.scorer-label {
+  font-size: 9px;
+  color: #55557a;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.scorer-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.scorer-stats {
+  font-size: 11px;
+  color: #aaaacc;
+  margin-top: 2px;
+}
+.scorer-empty {
+  font-size: 11px;
+  color: #44445a;
+  font-style: italic;
+}
