@@ -88,7 +88,10 @@ export default function MiniPlayer(props: MiniPlayerProps): React.ReactElement {
                 <button className="retry" onClick={onRefresh}>Retry</button>
               </div>
             ) : games.length === 0 ? (
-              <div className="state"><p className="state-title">No live {activeSport} games</p></div>
+  <div className="state">
+    <p className="state-title">No live {activeSport} games right now</p>
+    <p className="state-sub">Check back when games are scheduled</p>
+  </div>
             ) : (
               <div className="games-list">
                 {games.map(game => (
